@@ -1,14 +1,18 @@
-from playwright.sync_api import sync_playwright
+import os
 import re
 import requests
+from playwright.sync_api import sync_playwright
 
-import os
 WEBHOOK_URL = os.getenv("DISCORD_WEBHOOK_URL")
 print(f"WEBHOOK_URL cargado: {bool(WEBHOOK_URL)}")
 
-test_response = requests.post(WEBHOOK_URL, json={"content": "🚨 TEST DESDE GITHUB ACTIONS 🚨"})
+test_response = requests.post(
+    WEBHOOK_URL,
+    json={"content": "🚨 TEST DESDE GITHUB ACTIONS 🚨"}
+)
 print(f"Discord status: {test_response.status_code}")
 print(test_response.text[:200])
+
 raise SystemExit("Prueba terminada")
 URL = "https://www.google.com/travel/flights/search?tfs=CBwQAhojEgoyMDI2LTA1LTEyagwIAhIIL20vMGxwZmhyBwgBEgNFWkUaIxIKMjAyNi0wNS0xOGoHCAESA0VaRXIMCAISCC9tLzBscGZoQAFIAXABggELCP___________wGYAQE&hl=en&curr=USD"
 
