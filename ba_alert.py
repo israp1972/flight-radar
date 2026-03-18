@@ -106,7 +106,11 @@ with sync_playwright() as p:
     print(f"1 escala válidos: {len(one_stop_matches)}")
 
         print(f"WEBHOOK_URL cargado: {bool(WEBHOOK_URL)}")
+print("FORZANDO ENVÍO DE PRUEBA")
 
+test_message = "🚨 TEST DISCORD OK 🚨"
+response = requests.post(WEBHOOK_URL, json={"content": test_message})
+print(f"Test status: {response.status_code}")
     if direct_matches:
         best = sorted(direct_matches, key=lambda x: x["price"])[0]
         message = (
