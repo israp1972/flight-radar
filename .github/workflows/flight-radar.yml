@@ -1,0 +1,29 @@
+name: Flight Radar BA
+
+on:
+  schedule:
+    - cron: "*/30 * * * *"   # cada 30 minutos
+  workflow_dispatch:         # permite ejecutarlo manual
+
+jobs:
+  run-script:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Clonar repo
+        uses: actions/checkout@v4
+
+      - name: Instalar Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.10"
+
+      - name: Instalar dependencias
+        run: |
+          pip install -r requirements.txt
+          python -m playwright install chromium
+
+      - name: Ejecutar script
+        env:
+          DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
+        run: python ba_alert.py
