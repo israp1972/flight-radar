@@ -19,7 +19,7 @@ def parse_duration_hours(text: str):
     return hours + minutes / 60.0
 
 with sync_playwright() as p:
-    browser = p.chromium.launch(headless=False)
+    browser = p.chromium.launch(headless=True)
     page = browser.new_page()
     page.goto(URL, wait_until="domcontentloaded")
     page.wait_for_timeout(10000)
