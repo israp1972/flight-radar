@@ -2,7 +2,8 @@ from playwright.sync_api import sync_playwright
 import re
 import requests
 
-WEBHOOK_URL = "https://discord.com/api/webhooks/1483789945079333014/ZF_mb7h-A3q9Vr681SpL0YVal-vHIeOxXuXcAoQI1Jgub7y5v5s8IWoAwJHuBp8qhfyY"
+import os
+WEBHOOK_URL = os.getenv("DISCORD_WEBHOOK_URL")
 
 URL = "https://www.google.com/travel/flights/search?tfs=CBwQAhojEgoyMDI2LTA1LTEyagwIAhIIL20vMGxwZmhyBwgBEgNFWkUaIxIKMjAyNi0wNS0xOGoHCAESA0VaRXIMCAISCC9tLzBscGZoQAFIAXABggELCP___________wGYAQE&hl=en&curr=USD"
 
