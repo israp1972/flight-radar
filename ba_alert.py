@@ -122,7 +122,7 @@ with sync_playwright() as p:
 
     if message:
         print("Enviando alerta a Discord...")
-        requests.post(WEBHOOK_URL, json={"content": message})
+        requests.post(WEBHOOK_URL, json={"content": "@everyone 🚨 GANGA DETECTADA 🚨\n" + message})
     else:
         print("No hay coincidencias válidas.")
 
