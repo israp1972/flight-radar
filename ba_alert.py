@@ -105,33 +105,39 @@ with sync_playwright() as p:
     print(f"Directos válidos: {len(direct_matches)}")
     print(f"1 escala válidos: {len(one_stop_matches)}")
 
+        print(f"WEBHOOK_URL cargado: {bool(WEBHOOK_URL)}")
+
     if direct_matches:
         best = sorted(direct_matches, key=lambda x: x["price"])[0]
         message = (
-    "✈️ GANGA DETECTADA\n"
-    "Ruta: Lima → Buenos Aires\n"
-    "Tipo: DIRECTO\n"
-    f"Precio: USD {best['price']}\n"
-    f"Duración: {best['duration_h']:.2f} h\n"
-    f"Límite configurado: USD {MAX_PRICE}\n"
-    f"🔗 Ver vuelo: {URL}"
-)
+            "✈️ GANGA DETECTADA\n"
+            "Ruta: Lima → Buenos Aires\n"
+            "Tipo: DIRECTO\n"
+            f"Precio: USD {best['price']}\n"
+            f"Duración: {best['duration_h']:.2f} h\n"
+            f"Límite configurado: USD {MAX_PRICE}\n"
+            f"🔗 Ver vuelo: {URL}"
+        )
         print(message)
-        requests.post(WEBHOOK_URL, json={"content": message})
+        response = requests.post(WEBHOOK_URL, json={"content": message})
+        print(f"Discord status: {response.status_code}")
+        print(response.text[:500])
 
     elif one_stop_matches:
         best = sorted(one_stop_matches, key=lambda x: x["price"])[0]
         message = (
-    "✈️ GANGA DETECTADA\n"
-    "Ruta: Lima → Buenos Aires\n"
-    "Tipo: 1 ESCALA\n"
-    f"Precio: USD {best['price']}\n"
-    f"Duración: {best['duration_h']:.2f} h\n"
-    f"Límite configurado: USD {MAX_PRICE}\n"
-    f"🔗 Ver vuelo: {URL}"
-)
+            "✈️ GANGA DETECTADA\n"
+            "Ruta: Lima → Buenos Aires\n"
+            "Tipo: 1 ESCALA\n"
+            f"Precio: USD {best['price']}\n"
+            f"Duración: {best['duration_h']:.2f} h\n"
+            f"Límite configurado: USD {MAX_PRICE}\n"
+            f"🔗 Ver vuelo: {URL}"
+        )
         print(message)
-        requests.post(WEBHOOK_URL, json={"content": message})
+        response = requests.post(WEBHOOK_URL, json={"content": message})
+        print(f"Discord status: {response.status_code}")
+        print(response.text[:500])
 
     else:
         print("No hay coincidencias válidas. No se envía alerta.")
