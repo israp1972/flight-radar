@@ -1,0 +1,9 @@
+services:
+  - type: cron
+    name: flight-radar-ba
+    runtime: python
+    schedule: "*/30 * * * *"
+    buildCommand: |
+      pip install -r requirements.txt
+      python -m playwright install chromium
+    startCommand: python ba_alert.py
