@@ -26,4 +26,4 @@ jobs:
       - name: Ejecutar script
         env:
           DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
-        run: python kayak_test.py
+        run: python ba_alert.py
