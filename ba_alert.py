@@ -69,11 +69,11 @@ def parse_flights_from_text(text: str):
                 if current:
                     has_duration = any("hr" in x.lower() for x in current)
                     has_stop = any(
-    ("nonstop" in x.lower())
-    or ("directo" in x.lower())
-    or ("1 stop" in x.lower())
-    for x in current
-)
+                        ("nonstop" in x.lower())
+                        or ("directo" in x.lower())
+                        or ("1 stop" in x.lower())
+                        for x in current
+                    )
                     if has_duration and has_stop:
                         current.append(line)
                         flights.append(current)
@@ -92,11 +92,11 @@ def parse_flights_from_text(text: str):
 
             has_duration = any("hr" in x.lower() for x in current)
             has_stop = any(
-    ("nonstop" in x.lower())
-    or ("directo" in x.lower())
-    or ("1 stop" in x.lower())
-    for x in current
-)
+                ("nonstop" in x.lower())
+                or ("directo" in x.lower())
+                or ("1 stop" in x.lower())
+                for x in current
+            )
 
             if has_duration and has_stop:
                 flights.append(current)
@@ -112,7 +112,7 @@ def parse_flights_from_text(text: str):
         duration_h = None
         stop_type = None
 
-                for line in block:
+        for line in block:
             if price is None and re.fullmatch(r"\$\d[\d,]*", line):
                 price = int(line.replace("$", "").replace(",", ""))
 
