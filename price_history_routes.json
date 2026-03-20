@@ -1,0 +1,262 @@
+[
+  {
+    "route": "LIM-MIA",
+    "timestamp": "2026-03-19T12:13:36.950609",
+    "flights": [
+      {
+        "price": 331,
+        "duration_h": 3.25,
+        "stop_type": "1_stop"
+      },
+      {
+        "price": 331,
+        "duration_h": 9.166666666666666,
+        "stop_type": "1_stop"
+      },
+      {
+        "price": 440,
+        "duration_h": 8.583333333333334,
+        "stop_type": "1_stop"
+      },
+      {
+        "price": 588,
+        "duration_h": 5.833333333333333,
+        "stop_type": "direct"
+      }
+    ]
+  },
+  {
+    "route": "LIM-BUE",
+    "timestamp": "2026-03-19T12:15:04.033659",
+    "flights": [
+      {
+        "price": 346,
+        "duration_h": 4.416666666666667,
+        "stop_type": "direct"
+      },
+      {
+        "price": 346,
+        "duration_h": 4.5,
+        "stop_type": "direct"
+      },
+      {
+        "price": 397,
+        "duration_h": 4.333333333333333,
+        "stop_type": "direct"
+      }
+    ]
+  },
+  {
+    "route": "LIM-MIA",
+    "timestamp": "2026-03-19T12:15:19.258073",
+    "flights": [
+      {
+        "price": 331,
+        "duration_h": 14.25,
+        "stop_type": "1_stop"
+      },
+      {
+        "price": 331,
+        "duration_h": 10.75,
+        "stop_type": "1_stop"
+      },
+      {
+        "price": 331,
+        "duration_h": 9.166666666666666,
+        "stop_type": "1_stop"
+      },
+      {
+        "price": 440,
+        "duration_h": 8.583333333333334,
+        "stop_type": "1_stop"
+      },
+      {
+        "price": 588,
+        "duration_h": 5.833333333333333,
+        "stop_type": "direct"
+      }
+    ]
+  },
+  {
+    "route": "LIM-MAD",
+    "timestamp": "2026-03-19T12:15:34.474542",
+    "flights": [
+      {
+        "price": 932,
+        "duration_h": 26.916666666666668,
+        "stop_type": "1_stop"
+      },
+      {
+        "price": 1543,
+        "duration_h": 11.333333333333334,
+        "stop_type": "direct"
+      },
+      {
+        "price": 1562,
+        "duration_h": 11.333333333333334,
+        "stop_type": "direct"
+      },
+      {
+        "price": 1574,
+        "duration_h": 11.833333333333334,
+        "stop_type": "direct"
+      }
+    ]
+  },
+  {
+    "route": "LIM-BUE",
+    "timestamp": "2026-03-19T12:18:43.457163",
+    "flights": [
+      {
+        "price": 333,
+        "duration_h": 4.416666666666667,
+        "stop_type": "direct"
+      },
+      {
+        "price": 346,
+        "duration_h": 4.5,
+        "stop_type": "direct"
+      },
+      {
+        "price": 346,
+        "duration_h": 4.5,
+        "stop_type": "direct"
+      },
+      {
+        "price": 397,
+        "duration_h": 4.333333333333333,
+        "stop_type": "direct"
+      }
+    ]
+  },
+  {
+    "route": "LIM-MIA",
+    "timestamp": "2026-03-19T12:18:58.851339",
+    "flights": [
+      {
+        "price": 331,
+        "duration_h": 14.25,
+        "stop_type": "1_stop"
+      },
+      {
+        "price": 331,
+        "duration_h": 10.75,
+        "stop_type": "1_stop"
+      },
+      {
+        "price": 331,
+        "duration_h": 9.166666666666666,
+        "stop_type": "1_stop"
+      },
+      {
+        "price": 440,
+        "duration_h": 8.583333333333334,
+        "stop_type": "1_stop"
+      },
+      {
+        "price": 588,
+        "duration_h": 5.833333333333333,
+        "stop_type": "direct"
+      }
+    ]
+  },
+  {
+    "route": "LIM-MAD",
+    "timestamp": "2026-03-19T12:19:13.487543",
+    "flights": [
+      {
+        "price": 932,
+        "duration_h": 26.916666666666668,
+        "stop_type": "1_stop"
+      },
+      {
+        "price": 1543,
+        "duration_h": 11.333333333333334,
+        "stop_type": "direct"
+      },
+      {
+        "price": 1562,
+        "duration_h": 11.333333333333334,
+        "stop_type": "direct"
+      },
+      {
+        "price": 1574,
+        "duration_h": 11.833333333333334,
+        "stop_type": "direct"
+      }
+    ]
+  },
+  {
+    "route": "LIM-BUE",
+    "timestamp": "2026-03-19T12:22:00.456217",
+    "flights": [
+      {
+        "price": 333,
+        "duration_h": 4.416666666666667,
+        "stop_type": "direct"
+      },
+      {
+        "price": 346,
+        "duration_h": 4.5,
+        "stop_type": "direct"
+      },
+      {
+        "price": 346,
+        "duration_h": 4.5,
+        "stop_type": "direct"
+      },
+      {
+        "price": 397,
+        "duration_h": 4.333333333333333,
+        "stop_type": "direct"
+      }
+    ]
+  },
+  {
+    "route": "LIM-MIA",
+    "timestamp": "2026-03-19T12:22:15.197686",
+    "flights": [
+      {
+        "price": 331,
+        "duration_h": 3.25,
+        "stop_type": "1_stop"
+      },
+      {
+        "price": 331,
+        "duration_h": 9.166666666666666,
+        "stop_type": "1_stop"
+      },
+      {
+        "price": 440,
+        "duration_h": 8.583333333333334,
+        "stop_type": "1_stop"
+      },
+      {
+        "price": 588,
+        "duration_h": 5.833333333333333,
+        "stop_type": "direct"
+      }
+    ]
+  },
+  {
+    "route": "LIM-MAD",
+    "timestamp": "2026-03-19T12:22:30.175943",
+    "flights": [
+      {
+        "price": 1543,
+        "duration_h": 8.25,
+        "stop_type": "direct"
+      },
+      {
+        "price": 1562,
+        "duration_h": 11.333333333333334,
+        "stop_type": "direct"
+      },
+      {
+        "price": 1574,
+        "duration_h": 11.833333333333334,
+        "stop_type": "direct"
+      }
+    ]
+  }
+]

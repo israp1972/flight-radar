@@ -1,14 +1,8 @@
-import os
 import re
-import requests
 from playwright.sync_api import sync_playwright
-
-WEBHOOK_URL = os.getenv("DISCORD_WEBHOOK_URL")
+from price_history import add_snapshot
 
 URL = "https://www.google.com/travel/flights/search?tfs=CBwQAhojEgoyMDI2LTA1LTEyagwIAhIIL20vMGxwZmhyBwgBEgNFWkUaIxIKMjAyNi0wNS0xOGoHCAESA0VaRXIMCAISCC9tLzBscGZoQAFIAXABggELCP___________wGYAQE&hl=en&curr=USD"
-
-MAX_PRICE = 700
-MAX_DURATION_ONE_STOP_HOURS = 8
 
 
 def parse_duration_hours(text: str):
@@ -21,7 +15,7 @@ def parse_duration_hours(text: str):
 
 
 with sync_playwright() as p:
-    browser = p.chromium.launch(headless=True)
+    browser = p.chromium.launch(headless=False)
     page = browser.new_page()
     page.goto(URL, wait_until="domcontentloaded")
     page.wait_for_timeout(12000)
@@ -59,7 +53,6 @@ with sync_playwright() as p:
 
     for line in section:
         if not seen_first_real_flight:
-            # Ignorar banners/resúmenes hasta encontrar un vuelo real
             if re.fullmatch(r"\$\d[\d,]*", line):
                 if current:
                     has_duration = any("hr" in x.lower() for x in current)
@@ -80,7 +73,6 @@ with sync_playwright() as p:
                 current.append(line)
             continue
 
-        # Después del primer vuelo real, seguimos agrupando normalmente
         if re.fullmatch(r"\$\d[\d,]*", line):
             current.append(line)
 
@@ -127,58 +119,11 @@ with sync_playwright() as p:
                 "stop_type": stop_type
             })
 
-    direct_matches = [
-        f for f in parsed
-        if f["stop_type"] == "direct" and f["price"] <= MAX_PRICE
-    ]
-
-    one_stop_matches = [
-        f for f in parsed
-        if f["stop_type"] == "1_stop"
-        and f["price"] <= MAX_PRICE
-        and f["duration_h"] <= MAX_DURATION_ONE_STOP_HOURS
-    ]
-
     print("=== VUELOS PARSEADOS ===")
     for f in parsed[:10]:
         print(f)
 
-    print("=== RESUMEN ===")
-    print(f"Directos válidos: {len(direct_matches)}")
-    print(f"1 escala válidos: {len(one_stop_matches)}")
-
-    message = None
-
-    if direct_matches:
-        best = sorted(direct_matches, key=lambda x: x["price"])[0]
-        message = (
-            "✈️ GANGA DETECTADA\n"
-            "Ruta: Lima → Buenos Aires\n"
-            "Tipo: DIRECTO\n"
-            f"Precio: USD {best['price']}\n"
-            f"Duración: {best['duration_h']:.2f} h\n"
-            f"🔗 {URL}"
-        )
-
-    elif one_stop_matches:
-        best = sorted(one_stop_matches, key=lambda x: x["price"])[0]
-        message = (
-            "✈️ GANGA DETECTADA\n"
-            "Ruta: Lima → Buenos Aires\n"
-            "Tipo: 1 ESCALA\n"
-            f"Precio: USD {best['price']}\n"
-            f"Duración: {best['duration_h']:.2f} h\n"
-            f"🔗 {URL}"
-        )
-
-    if message:
-        print("Enviando alerta a Discord...")
-        requests.post(
-            WEBHOOK_URL,
-            json={"content": "@everyone 🚨 GANGA DETECTADA 🚨\n" + message}
-        )
-    else:
-        print("No hay coincidencias válidas.")
+    add_snapshot(parsed)
 
     print("Fin del proceso.")
     browser.close()
