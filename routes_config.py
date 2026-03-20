@@ -7,6 +7,13 @@ ROUTES = [
         "max_duration_one_stop_hours": 8,
     },
     {
+    "name": "Arequipa",
+    "code": "LIM-AQP",
+    "url": "",
+    "max_price": 60,
+    "max_duration_one_stop_hours": 0,
+},
+    {
         "name": "New York",
         "code": "LIM-NYC",
         "url": "",
