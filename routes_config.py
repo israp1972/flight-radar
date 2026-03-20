@@ -10,7 +10,7 @@ ROUTES = [
     "name": "Arequipa",
     "code": "LIM-AQP",
     "url": "https://www.google.com/travel/flights/search?tfs=CBwQAhojEgoyMDI2LTA0LTIzagwIAhIIL20vMGxwZmhyBwgBEgNBUVAaIxIKMjAyNi0wNC0yNmoHCAESA0FRUHIMCAISCC9tLzBscGZoQAFIAXABggELCP___________wGYAQE&hl=en&curr=USD",
-    "max_price": 60,
+    "max_price": 200,
     "max_duration_one_stop_hours": 0,
     },
     {
