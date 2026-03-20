@@ -7,11 +7,11 @@ ROUTES = [
         "max_duration_one_stop_hours": 8,
     },
     {
-        "name": "Arequipa",
-        "code": "LIM-AQP",
-        "url": "https://www.google.com/travel/flights/search?tfs=CBwQAholEgoyMDI2LTA0LTIzKABqDAgCEggvbS8wbHBmaHIHCAESA0FRUBolEgoyMDI2LTA0LTI2KABqBwgBEgNBUVByDAgCEggvbS8wbHBmaEABSAFwAYIBCwj___________8BmAEB&tfu=EgYIABAAGAA&hl=es&gl=PE&curr=USD",
-        "max_price": 60,
-        "max_duration_one_stop_hours": 0,
+    "name": "Arequipa",
+    "code": "LIM-AQP",
+    "url": "https://www.google.com/travel/flights/search?tfs=CBwQAhojEgoyMDI2LTA0LTIzagwIAhIIL20vMGxwZmhyBwgBEgNBUVAaIxIKMjAyNi0wNC0yNmoHCAESA0FRUHIMCAISCC9tLzBscGZoQAFIAXABggELCP___________wGYAQE&hl=en&curr=USD",
+    "max_price": 60,
+    "max_duration_one_stop_hours": 0,
     },
     {
         "name": "New York",
