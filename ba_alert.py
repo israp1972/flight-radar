@@ -112,7 +112,7 @@ def parse_flights_from_text(text: str):
         duration_h = None
         stop_type = None
 
-        for line in block:
+                for line in block:
             if price is None and re.fullmatch(r"\$\d[\d,]*", line):
                 price = int(line.replace("$", "").replace(",", ""))
 
@@ -123,10 +123,10 @@ def parse_flights_from_text(text: str):
 
             low = line.lower()
             if stop_type is None:
-    if "nonstop" in low or "directo" in low:
-        stop_type = "direct"
-    elif "1 stop" in low:
-        stop_type = "1_stop"
+                if "nonstop" in low or "directo" in low:
+                    stop_type = "direct"
+                elif "1 stop" in low:
+                    stop_type = "1_stop"
 
         if price is not None and duration_h is not None and stop_type is not None:
             parsed.append(
