@@ -7,7 +7,7 @@ WEBHOOK_URL = os.getenv("DISCORD_WEBHOOK_URL")
 
 URL = "https://www.google.com/travel/flights/search?tfs=CBwQAhojEgoyMDI2LTA1LTEyagwIAhIIL20vMGxwZmhyBwgBEgNFWkUaIxIKMjAyNi0wNS0xOGoHCAESA0VaRXIMCAISCC9tLzBscGZoQAFIAXABggELCP___________wGYAQE&hl=en&curr=USD"
 
-MAX_PRICE = 700
+MAX_PRICE = 186
 MAX_DURATION_ONE_STOP_HOURS = 8
 
 
