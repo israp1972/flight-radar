@@ -27,23 +27,32 @@ def parse_flights_from_text(text: str):
     start_index = None
     end_index = None
 
-    for i, line in enumerate(lines):
-        if "Top departing flights" in line:
-            start_index = i
-            break
+   for i, line in enumerate(lines):
+    low = line.lower()
+    if (
+        "top departing flights" in low
+        or "mejores vuelos de ida" in low
+        or "vuelos de ida" in low
+    ):
+        start_index = i
+        break
 
     if start_index is None:
         return None
 
     for i in range(start_index + 1, len(lines)):
         line = lines[i]
-        if (
-            line.startswith("Price insights")
-            or line.startswith("Price history")
-            or line.startswith("Return flights")
-        ):
-            end_index = i
-            break
+        low = line.lower()
+if (
+    low.startswith("price insights")
+    or low.startswith("price history")
+    or low.startswith("return flights")
+    or low.startswith("información sobre precios")
+    or low.startswith("historial de precios")
+    or low.startswith("vuelos de regreso")
+):
+    end_index = i
+    break
 
     if end_index is None:
         end_index = min(len(lines), start_index + 120)
